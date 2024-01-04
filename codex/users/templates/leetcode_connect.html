@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Connect LeetCode Account</title>
+    <link rel="stylesheet" href="{% static 'css/connect.css' %}">
+    <link rel="shortcut icon" href="{% static 'media/logo.ico' %}" type="image/x-icon">
+</head>
+<body>
+    <div class="wrapper">
+        <h1 class="page-title">Connect Your LeetCode Account</h1>
+        <form class="form-wrapper" id="leetcodeForm">
+            <label for="leetcodeUsername">LeetCode Username:</label>
+            <input type="text" name="leetcodeUsername" id="leetcodeUsername" required>
+            <button type="submit" class="submit-btn">Connect</button>
+        </form>
+    </div>
+
+    <div id="resultContainer"></div>
+
+    <div id="heatmap"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/leetcode_connect.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/heatmap.js/2.0.2/heatmap.min.js"></script>
+</body>
+</html>

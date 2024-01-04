@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    {% for friend in friends %}
+    
+    <div class="friend">
+        <p>{{ friend.friend.username }}</p>
+        <a href="{% url 'friend_stats' friend_username=friend.friend.username %}">View Stats</a>
+    </div>
+
+    {% endfor %}
+
+{% endblock %}
+

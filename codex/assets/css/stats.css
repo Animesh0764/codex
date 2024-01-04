@@ -1,0 +1,53 @@
+.friend-stats-container {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 100% !important;
+}
+
+.friend-stats {
+    background-color: #f0f0f0 !important;
+    padding: 20px !important;
+    border-radius: 10px !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+.stats-text {
+    text-align: center !important;
+}
+
+.friend-h2 {
+    color: #333 !important;
+    font-size: 24px !important;
+    margin-bottom: 10px !important;
+}
+
+/* Style for the friend container */
+.friend {
+    background-color: #f0f0f0; /* Set your desired background color */
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Style for the friend username */
+.friend p {
+    color: #333; /* Set your desired text color */
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Style for the View Stats link */
+.friend a {
+    color: #007bff; /* Set your desired link color */
+    text-decoration: none;
+    font-size: 14px;
+    display: inline-block;
+    transition: color 0.3s ease; /* Add a smooth transition effect */
+}
+
+/* Hover effect for the View Stats link */
+.friend a:hover {
+    color: #0056b3; /* Set your desired hover color */
+}

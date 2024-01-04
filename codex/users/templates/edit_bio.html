@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="wrapper">
+        <h1>Edit Bio</h1>
+        <form method="post" action="{% url 'edit_bio' %}">
+            {% csrf_token %}
+            <label for="bio">Bio:</label>
+            <textarea name="bio" id="bio">{{ user.userprofile.bio }}</textarea>
+            <button type="submit">Save Bio</button>
+        </form>
+    </div>
+
+{% endblock %}

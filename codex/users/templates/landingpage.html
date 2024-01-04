@@ -1,0 +1,106 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/landing.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'media/logo.ico' %}" type="image/x-icon">
+    <title>Codex</title>
+</head>
+
+<body>
+    <header>
+        <section class="nav">
+
+            <!-- <div class="logo"><img src="minion.png"/></div> -->
+
+            <div class="logo">
+                <a href="{% url 'home' %}"><img src="/static/logo.png" class="logo" alt="TBD" style="height: 85px; width: 85px;margin-top: 5.5rem;"/></a>
+            </div>
+
+            
+            <input id="menu-toggle" type="checkbox" />
+            <label class="menu-button-container" for="menu-toggle">
+            <div class="menu-button"></div>
+        </label>
+            
+        
+            <ul class="menu">
+                <li><a href="{% url 'login' %}">Log in</a></li>
+                <li><a href="{% url 'signup' %}">Sign up</a></li>
+            </ul>
+        </section>
+    </header>
+
+
+    <section class="home" id="home ">
+        <div class="content">
+            <h3>
+                Welcome to <span class="yellowColor">Codex</span> - Where Coding Dreams Take Flight 
+            </h3>
+            <!-- <h3>
+                how to<span class="yellowColor"> program </span>a computer because it teaches you how to
+                <span class="yellowColor">Think</span>
+            </h3> -->
+            
+            <p>
+                Codex is your passport to the captivating world of competitive programming. We believe that coding goes beyond lines of text; it's a journey of creative expression and relentless problem-solving. Embrace your passion for programming, and let Codex be your guiding light towards mastering this art.
+            </p>
+
+            <a href="#btns" class="btn">JOIN US</a>
+        </div>
+
+        <div class="image">
+            <img src="{% static 'media/3.jpeg'%}" alt=" " />
+        </div>
+        <div class="image">
+            <img src="{% static 'media/4.jpeg'%}" alt=" " />
+        </div>
+        
+    </section>
+
+    
+
+    <h3>
+        <p>
+            Whether you're a coding wizard looking to conquer new heights or a curious beginner ready to explore the possibilities, Codex empowers you with the tools to learn, compete, and excel. Our state-of-the-art tracking system keeps you in sync with your progress across diverse coding websites, providing valuable insights and the motivation to push your boundaries further.
+        </p>
+    </h3>
+
+    <div class="image-container">
+        <img src="{% static 'media/2.jpeg'%}" alt="" class="centered-image" />
+    </div>
+
+    <h3><p>But Codex isn't just about individual growth. Our thriving community of like-minded coders fosters an atmosphere of camaraderie and knowledge-sharing. Engage in friendly competitions with your friends, collaborate on challenges, and celebrate each other's achievements - all while embracing the joy of coding together.</p></h3>
+
+    <div class="image-container">
+        <img src="{% static 'media/1.png'%}" alt="" class="centered-image" />
+    </div>
+
+    <h3>
+        <p>So, what are you waiting for? Join us at Codex and embark on an exhilarating adventure through the world of coding. Unleash your potential, ignite your creativity, and become part of a supportive community that nurtures your passion for programming. Together, let's redefine what it means to be a coding champion!</p>
+    </h3>
+
+    <div class="buttons" id="btns">
+        <a href="{% url 'login' %}"><button class="btn2">Login</button></a>
+        <p>OR</p>
+        <a href="{% url 'signup' %}"><button class="btn3">Register</button></a>
+    </div>
+
+    <div class="line"></div>
+
+    <footer>
+        &copy; 2023: Code Catalysts
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/stats.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="friend-stats-container">
+        <div class="friend-stats">
+            <div class="stats-text">
+                <h2 class="friend-h2">{{ friend_profile.user.username }}'s Stats</h2>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

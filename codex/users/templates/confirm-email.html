@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>Confirm your email</title>
+</head>
+<body>
+    <h2>Confirm Your Email</h2>
+    <p>Hello {{ user.username }},</p>
+    <p>Thank you for signing up! Please click the link below to confirm your email address:</p>
+    <a href="{{ confirm_url }}">{{ confirm_url }}</a>
+</body>
+</html>

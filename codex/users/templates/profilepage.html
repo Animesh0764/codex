@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="profile-container">
+        <h1 class="profile-title">User Profile</h1>
+        <p><strong class="profile-label">Username:</strong> {{ user.username }}</p>
+        <p><strong class="profile-label">Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong> {{ user.email }}</p>
+        <!-- <p><strong class="profile-label">Avatar:</strong> Display the avatar here</p> -->
+        <p><strong class="profile-label">Bio:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong> {{ user.userprofile.bio }}</p>
+        <p><strong>LeetCode Username:</strong> {{ user_profile.leetcode_username }}</p>
+
+        
+        
+        <!-- Edit Bio Form -->
+        <div class="edit-bio-form">
+            <form method="post" action="{% url 'edit_bio' %}" id="leetcodeForm">
+                {% csrf_token %}
+                <label for="bio" class="profile-label">Change bio here:</label>
+                <textarea name="bio" id="bio" class="profile-bio" placeholder="type and save to change your bio">{{ user.userprofile.bio }}</textarea>
+
+                <button type="submit" class="save-button">Save Bio</button>
+                <br>
+                <label for="leetcodeUsername"  class="profile-label">LeetCode Username:</label>
+                <input type="text" name="leetcodeUsername" id="leetcodeUsername" required>
+                <button type="submit" class="save-button">Connect</button>
+            </form>
+        </div>
+
+        <div id="leetcodeStatsContainer"></div>
+
+        <div class="add-friend-form">
+            <form method="post" action="{% url 'add_friend' %}" id="friendForm">
+                {% csrf_token %}
+                <label for="friend_username">Add Friend:</label>
+                <input type="text" name="friend_username" id="friend_username" required>
+                <button type="submit" class="send-request-button">Send Friend Request</button>
+            </form>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/leetcode_connect.js' %}"></script>
+    <script>
+        // Call the fetchLeetCodeStats function when the page loads to display the stats
+        $(document).ready(function () {
+            const leetcodeUsername = "{{ user_profile.leetcode_username }}";
+            if (leetcodeUsername) {
+                fetchLeetCodeStats(leetcodeUsername);
+            }
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <label for="friend_username">Friend's Username:</label>
+        <input type="text" name="friend_username" required>
+        <button type="submit">Add Friend</button>
+    </form>
+{% endblock %}

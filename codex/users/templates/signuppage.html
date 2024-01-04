@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="wrapper2">
+        <h1>Sign Up Page</h1>
+        <form class="user-form" action="/signup/" method="POST">
+            {% csrf_token %}
+            {{ form }}
+            {% if request.GET.next  %}
+                <input type="hidden" name="next" value="{{ request.GET.next }}">
+            {% endif %}
+            <input type="submit" value="Sign Up">
+        </form>
+    </div>
+
+{% endblock %}
