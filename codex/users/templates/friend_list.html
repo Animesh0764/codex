@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/list.css' %}">
+{% endblock %}
+
 {% block content %}
     {% for friend in friends %}
     
@@ -8,8 +12,34 @@
         <p>{{ friend.friend.username }}</p>
         <a href="{% url 'friend_stats' friend_username=friend.friend.username %}">View Stats</a>
     </div>
-
     {% endfor %}
+
+    <div class="suggestions-container" style="display: flex; flex-direction: column; align-items: center;">
+
+        <h2 style="margin-bottom: 10px; color: #fff;">Suggestions: Add people</h2>
+    
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+    
+            {% for suggestion in suggestions %}
+                <div class="suggestion" style="background-color: #f0f0f0; padding: 10px; border-radius: 5px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); width: 200px; text-align: center;">
+                    <p style="margin: 0; font-size: 18px;">{{ suggestion.username }}</p>
+                    <form method="post" action="{% url 'add_friend' %}" id="friendForm_{{ suggestion.username }}">
+                        {% csrf_token %}
+                        <input type="hidden" name="friend_username" value="{{ suggestion.username }}">
+                        <button type="submit" style="background-color: #007bff; color: #fff; border: none; padding: 8px 12px; border-radius: 3px; cursor: pointer; font-size: 16px; transition: background-color 0.2s;"
+                                onmouseover="this.style.backgroundColor='#0056b3'"
+                                onmouseout="this.style.backgroundColor='#007bff'">
+                            Add Friend
+                        </button>
+                    </form>
+                </div>
+            {% endfor %}
+    
+        </div>
+    
+    </div>
+    
+    
 
 {% endblock %}
 

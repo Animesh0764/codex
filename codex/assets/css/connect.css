@@ -1,145 +1,149 @@
-/* connect.css */
+connect.css
 html {
-    font-size: 16px;
-  }
-  
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f1f1f1;
-    color: #333;
-  }
-  
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+.profile-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.page-title {
+  margin-top: 0;
+  font-size: 2.5rem;
+  color: #007bff;
+  text-align: center;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-wrapper label {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-wrapper input[type="text"],
+.form-wrapper input[type="password"],
+.form-wrapper textarea {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.form-wrapper .submit-btn,
+.form-wrapper .save-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  font-size: 1.1rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.form-wrapper .submit-btn:hover,
+.form-wrapper .save-button:hover {
+  background-color: #0056b3;
+}
+
+/* LeetCode statistics styles */
+#resultContainer {
+  margin-top: 30px;
+}
+
+#resultContainer h2 {
+  font-size: 1.8rem;
+  color: #007bff;
+}
+
+#resultContainer p {
+  font-size: 1.2rem;
+}
+
+/* Error message styles */
+.error {
+  color: #e00;
+  font-size: 1.1rem;
+}
+
+/* Navigation bar styles */
+nav {
+  background-color: #007bff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin-left: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.logo {
+  margin-right: 20px;
+  vertical-align: middle;
+}
+
+/* Add hover effect to navigation links */
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
   .wrapper {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-  }
-  
-  .page-title {
-    margin-top: 0;
-    font-size: 2.5rem;
-    color: #007bff;
-    text-align: center;
-  }
-  
-  .form-wrapper {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .form-wrapper label {
-    font-size: 1.1rem;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .form-wrapper input[type="text"],
-  .form-wrapper input[type="password"] {
-    width: 100%;
-    max-width: 400px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-    margin-bottom: 15px;
-  }
-  
-  .submit-btn {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-    font-size: 1.1rem;
-    width: 100%;
-    max-width: 400px;
-  }
-  
-  .submit-btn:hover {
-    background-color: #0056b3;
-  }
-  
-  /* LeetCode statistics styles */
-  #resultContainer {
-    margin-top: 30px;
-  }
-  
-  #resultContainer h2 {
-    font-size: 1.8rem;
-    color: #007bff;
-  }
-  
-  #resultContainer p {
-    font-size: 1.2rem;
-  }
-  
-  /* Error message styles */
-  .error {
-    color: #e00;
-    font-size: 1.1rem;
-  }
-  
-  /* Navigation bar styles */
-  nav {
-    background-color: #007bff;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav li {
-    margin-left: 20px;
-  }
-  
-  nav a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2rem;
-  }
-  
-  .logo {
-    margin-right: 20px;
-    vertical-align: middle;
-  }
-  
-  /* Add hover effect to navigation links */
-  nav a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Responsive design */
-  @media screen and (max-width: 600px) {
-    .wrapper {
       padding: 10px;
-    }
-  
-    .submit-btn {
+  }
+
+  .form-wrapper .submit-btn,
+  .form-wrapper .save-button {
       padding: 10px 15px;
-    }
-  
-    nav {
+  }
+
+  nav {
       padding: 10px;
       justify-content: center;
-    }
-  
-    nav li {
-      margin: 0 5px;
-    }
   }
+
+  nav li {
+      margin: 0 5px;
+  }
+}
 
 
   #resultContainer{

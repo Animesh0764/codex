@@ -20,6 +20,7 @@ from .decorators import redirect_authenticated_user
 from .models import Friend
 from django.http import JsonResponse
 from django.contrib import messages
+import random
 
 User = get_user_model()
 
@@ -56,7 +57,7 @@ def signup(req):
 
             #Email to be sent
             subject = "Confirm your email"
-            email = EmailMultiAlternatives(subject, '', to=[user.email])
+            email = EmailMultiAlternatives(subject, message, to=[user.email])
             email.attach_alternative(message, "text/html")
             email.send()
 
@@ -181,13 +182,20 @@ def add_friend(request):
 def friend_list(request):
     friends = Friend.objects.filter(user=request.user).exclude(friend=request.user)
     print(friends)
-    return render(request, 'friend_list.html', {'friends': friends})
+    users_to_exclude = friends.values('friend')
+
+    all_users = User.objects.exclude(pk=request.user.pk).exclude(pk__in=users_to_exclude)
+
+    num_suggestions = min(5, all_users.count())
+    suggestions = random.sample(list(all_users), num_suggestions)
+    print(suggestions)
+    return render(request, 'friend_list.html', {'friends': friends, 'suggestions': suggestions})
 
 @login_required
 def friend_stats(request, friend_username):
     try:
         friend = User.objects.get(username=friend_username)
-        friend_profile = UserProfile.objects.get(cur_user=friend)
+        friend_profile = UserProfile.objects.get(cur_user=friend)  # Use 'cur_user'
         return render(request, 'friend_stats.html', {'friend_profile': friend_profile})
     except User.DoesNotExist:
         return render(request, 'friend_stats.html', {'error_message': f"User '{friend_username}' not found."})

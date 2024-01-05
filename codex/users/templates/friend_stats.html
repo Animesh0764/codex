@@ -9,9 +9,25 @@
     <div class="friend-stats-container">
         <div class="friend-stats">
             <div class="stats-text">
-                <h2 class="friend-h2">{{ friend_profile.user.username }}'s Stats</h2>
+                <h2 class="friend-h2">{{ friend_profile.cur_user.username }}'s Stats</h2>
             </div>
         </div>
     </div>
+
+    <div id="leetcodeStatsContainer"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/individual-friends-stats.js' %}"></script>
+    <script>
+        $(document).ready(function () {
+            const leetcodeUsername = "{{ friend_profile.leetcode_username }}";
+            if (leetcodeUsername) {
+                console.log("LeetCode Username:", leetcodeUsername);
+                fetchIndividualLeetCodeStats(leetcodeUsername);
+            } else {
+                console.error("LeetCode Username not available.");
+            }
+        });
+    </script>
 
 {% endblock %}
