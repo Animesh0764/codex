@@ -14,18 +14,82 @@
         </div>
     </div>
 
-    <div id="leetcodeStatsContainer"></div>
+    <div class="ind-stats">
+        <div id="username"></div>
+    
+        <div class="stat-box" id="totalBox">
+            <div id="totalProblems"></div>
+        </div>
+    
+        <div class="stat-box" id="easyBox">
+            <div id="easy"></div>
+            <div id="easyPercentage"></div>
+        </div>
+    
+        <div class="stat-box" id="mediumBox">
+            <div id="medium"></div>
+            <div id="mediumPercentage"></div>
+        </div>
+    
+        <div class="stat-box" id="hardBox">
+            <div id="hard"></div>
+            <div id="hardPercentage"></div>
+        </div>
+    
+        <div class="stat-box" id="totalBox2">
+            <div id="solved"></div>
+            <div id="solvedPercentage"></div>
+        </div>
+    </div>
+
+    <div class="ind-stats">
+        <div id="CFusername"></div>
+    
+        <div class="stat-box" id="totalBoxCF">
+            <div id="totalProblemsCF"></div>
+        </div>
+    
+        <div class="stat-box" id="attemptBox">
+            <div id="totalAttempts"></div>
+            <div id="successAttempts"></div>
+        </div>
+    
+        <div class="stat-box" id="quesBox">
+            <div id="practice"></div>
+            <div id="contest"></div>
+        </div>
+    
+        <div class="stat-box" id="ratingBox">
+            <div id="currating"></div>
+            <div id="maxrating"></div>
+        </div>
+    
+        <div class="stat-box" id="rankBox">
+            <div id="maxrank"></div>
+            <div id="minrank"></div>
+        </div>
+    </div>
+    
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{% static 'js/individual-friends-stats.js' %}"></script>
     <script>
         $(document).ready(function () {
             const leetcodeUsername = "{{ friend_profile.leetcode_username }}";
+            const codeforcesUsername = "{{ friend_profile.codeforces_username }}"
             if (leetcodeUsername) {
                 console.log("LeetCode Username:", leetcodeUsername);
                 fetchIndividualLeetCodeStats(leetcodeUsername);
             } else {
                 console.error("LeetCode Username not available.");
+            }
+            
+            if (codeforcesUsername) {
+                console.log("LeetCode Username:", codeforcesUsername);
+                fetchCodeForcesStatus(codeforcesUsername);
+                fetchCodeForcesRating(codeforcesUsername);
+            } else {
+                console.error("CodeForces Username not available.");
             }
         });
     </script>

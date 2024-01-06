@@ -22,32 +22,213 @@
     margin-bottom: 10px !important;
 }
 
-/* Style for the friend container */
 .friend {
-    background-color: #f0f0f0; /* Set your desired background color */
+    background-color: #f0f0f0;
     padding: 10px;
     border-radius: 8px;
     margin-bottom: 10px;
 }
 
-/* Style for the friend username */
 .friend p {
-    color: #333; /* Set your desired text color */
+    color: #333;
     font-size: 16px;
     font-weight: bold;
     margin-bottom: 5px;
 }
 
-/* Style for the View Stats link */
 .friend a {
-    color: #007bff; /* Set your desired link color */
+    color: #007bff;
     text-decoration: none;
     font-size: 14px;
     display: inline-block;
-    transition: color 0.3s ease; /* Add a smooth transition effect */
+    transition: color 0.3s ease;
 }
 
-/* Hover effect for the View Stats link */
 .friend a:hover {
-    color: #0056b3; /* Set your desired hover color */
+    color: #0056b3;
+}
+
+.ind-stats {
+    background-color: #2c3e50;
+    padding: 20px;
+    border-radius: 10px;
+    color: #ecf0f1;
+    margin-top: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ind-stats > div {
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.stat-box {
+    border: 2px solid #fff;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    justify-content: space-between;
+}
+
+#totalBox {
+    border-color: #3498db;
+}
+
+#totalBox2 {
+    border-color: #3498db;
+}
+
+#easyBox {
+    border-color: #2ecc71;
+}
+
+#mediumBox {
+    border-color: #f1c40f;
+}
+
+#hardBox {
+    border-color: #e74c3c;
+}
+
+#username {
+    font-size: 1.8rem;
+    background-color: #34495e;
+    padding: 12px;
+}
+
+#CFusername {
+    font-size: 1.8rem;
+    background-color: #34495e;
+    padding: 12px;
+}
+
+#solved, #easy, #medium, #hard, #totalProblems, #solvedPercentage, #easyPercentage, #mediumPercentage, #hardPercentage {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+#solved {
+    color: #3498db;
+}
+
+#easy {
+    color: #2ecc71;
+}
+
+#medium {
+    color: #f39c12;
+}
+
+#hard {
+    color: #e74c3c;
+}
+
+#totalProblems {
+    color: #3498db;
+}
+
+#solvedPercentage {
+    color: #3498db;
+}
+
+#easyPercentage {
+    color: #2ecc71;
+}
+
+#mediumPercentage {
+    color: #f39c12;
+}
+
+#hardPercentage {
+    color: #e74c3c;
+}
+
+#totalBoxCF {
+    border-color: #3498db;
+}
+
+#totalProblemsCF {
+    color: #3498db;
+}
+
+#totalAttempts {
+    color: #2ecc71;
+}
+
+#successAttempts {
+    color: #2ecc71;
+}
+
+#practice {
+    color: #f1c40f;
+}
+
+#contest {
+    color: #f1c40f;
+}
+
+#maxrating {
+    color: #e74c3c;
+}
+
+#currating {
+    color: #e74c3c;
+}
+
+#maxrank {
+    color: #3498db;
+}
+
+#minrank {
+    color: #3498db;
+}
+
+#totalBoxCF {
+    border-color: #3498db;
+}
+
+#attemptBox {
+    border-color: #2ecc71;
+}
+
+#quesBox {
+    border-color: #f1c40f;
+}
+
+#ratingBox {
+    border-color: #e74c3c;
+}
+
+#rankBox {
+    border-color: #3498db;
+}
+
+#totalProblemsCF, #totalAttempts, #successAttempts, #practice, #contest, #maxrating, #maxrank, #minrank, #currating {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+@media (max-width: 1187px) {
+    #totalProblemsCF, #totalAttempts, #successAttempts, #practice, #contest, #maxrating, #maxrank, #minrank, #currating, #solved, #easy, #medium, #hard, #totalProblems, #solvedPercentage, #easyPercentage, #mediumPercentage, #hardPercentage {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+}
+
+@media (max-width:750px) {
+    #totalProblemsCF, #totalAttempts, #successAttempts, #practice, #contest, #maxrating, #maxrank, #minrank, #currating, #solved, #easy, #medium, #hard, #totalProblems, #solvedPercentage, #easyPercentage, #mediumPercentage, #hardPercentage {
+        font-size: 1rem;
+        font-weight: bold;
+    }
+}
+
+@media (max-width: 540px) {
+    #totalProblemsCF, #totalAttempts, #successAttempts, #practice, #contest, #maxrating, #maxrank, #minrank, #currating, #solved, #easy, #medium, #hard, #totalProblems, #solvedPercentage, #easyPercentage, #mediumPercentage, #hardPercentage {
+        font-size: 0.8rem;
+        font-weight: bold;
+    }
 }

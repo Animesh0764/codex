@@ -199,3 +199,32 @@ def friend_stats(request, friend_username):
         return render(request, 'friend_stats.html', {'friend_profile': friend_profile})
     except User.DoesNotExist:
         return render(request, 'friend_stats.html', {'error_message': f"User '{friend_username}' not found."})
+    
+
+@login_required
+def edit_cf_account(request):
+    user = request.user
+    user_profile, created = UserProfile.objects.get_or_create(cur_user=user)
+
+    if request.method == 'POST':
+        new_codeforces_username = request.POST.get('codeforcesUsername')
+        
+        user_profile = request.user.userprofile
+        user_profile.codeforces_username = new_codeforces_username
+        user_profile.save()
+    
+    return redirect('profile_page')
+
+@login_required
+def edit_lc_account(request):
+    user = request.user
+    user_profile, created = UserProfile.objects.get_or_create(cur_user=user)
+
+    if request.method == 'POST':
+        new_leetcode_username = request.POST.get('leetcodeUsername')
+        
+        user_profile = request.user.userprofile
+        user_profile.leetcode_username = new_leetcode_username
+        user_profile.save()
+    
+    return redirect('profile_page')

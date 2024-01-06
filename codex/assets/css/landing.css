@@ -478,3 +478,39 @@ footer {
         transition: all 0.4s ease-in-out;
     }
 }
+
+@media (max-width: 1320px) {
+    h3 p{
+        font-size: 1.7rem;
+        color: white;
+        padding: 1rem 0;
+        text-align: center;
+        padding: 4rem 10rem;
+        font-size: 2rem;
+        text-transform: lowercase;
+    }
+}
+
+@media (max-width: 730px) {
+    h3 p{
+        font-size: 1.7rem;
+        color: white;
+        padding: 1rem 0;
+        text-align: center;
+        padding: 4rem 4rem;
+        font-size: 2rem;
+        text-transform: lowercase;
+    }
+}
+
+@media (max-width: 420px) {
+    h3 p{
+        font-size: 1.7rem;
+        color: white;
+        padding: 1rem 0;
+        text-align: center;
+        padding: 4rem 4rem;
+        font-size: 2rem;
+        text-transform: lowercase;
+    }
+}

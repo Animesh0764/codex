@@ -2,44 +2,57 @@
 {% load static %}
 
 {% block content %}
-    <div class="profile-container">
-        <h1 class="profile-title">User Profile</h1>
-        <p><strong class="profile-label">Username:</strong> {{ user.username }}</p>
-        <p><strong class="profile-label">Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong> {{ user.email }}</p>
-        <!-- <p><strong class="profile-label">Avatar:</strong> Display the avatar here</p> -->
-        <p><strong class="profile-label">Bio:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong> {{ user.userprofile.bio }}</p>
-        <p><strong>LeetCode Username:</strong> {{ user_profile.leetcode_username }}</p>
+<div class="profile-container">
+    <h1 class="profile-title">User Profile</h1>
+    <p><strong class="profile-label">Username:</strong> {{ user.username }}</p>
+    <p><strong class="profile-label">Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong> {{ user.email }}</p>
+    <p><strong class="profile-label">Bio:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong> {{ user.userprofile.bio }}</p>
+    <p><strong>LeetCode Username:</strong> {{ user_profile.leetcode_username }}</p>
 
-        
-        
-        <!-- Edit Bio Form -->
-        <div class="edit-bio-form">
-            <form method="post" action="{% url 'edit_bio' %}" id="leetcodeForm">
-                {% csrf_token %}
-                <label for="bio" class="profile-label">Change bio here:</label>
-                <textarea name="bio" id="bio" class="profile-bio" placeholder="type and save to change your bio">{{ user.userprofile.bio }}</textarea>
+    <!-- Edit Bio Form -->
+    <div class="edit-bio-form" style="margin-top: 20px;">
+        <form method="post" action="{% url 'edit_bio' %}" id="leetcodeForm" style="display: flex; flex-direction: column; align-items: center; self-align: center; text-align: center;">
+            {% csrf_token %}
+            <label for="bio" class="profile-label" style="margin-bottom: 10px;">Change bio here:</label>
+            <textarea name="bio" id="bio" class="profile-bio" placeholder="Type and save to change your bio" style="margin-bottom: 10px; width: 80%; padding: 8px; border-radius: 5px;">{{ user.userprofile.bio }}</textarea>
 
-                <button type="submit" class="save-button">Save Bio</button>
-                <br>
-                <label for="leetcodeUsername"  class="profile-label">LeetCode Username:</label>
-                <input type="text" name="leetcodeUsername" id="leetcodeUsername" required>
-                <button type="submit" class="save-button">Connect</button>
-            </form>
-        </div>
-
-        <div id="leetcodeStatsContainer"></div>
-
-        <div class="add-friend-form">
-            <form method="post" action="{% url 'add_friend' %}" id="friendForm">
-                {% csrf_token %}
-                <label for="friend_username">Add Friend:</label>
-                <input type="text" name="friend_username" id="friend_username" required>
-                <button type="submit" class="send-request-button">Send Friend Request</button>
-            </form>
-            <a href="/friend-list"><button class="send-request-button">View Friends</button></a>
-        </div>
-
+            <button type="submit" class="save-button" style="background-color: #3498db; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.2s; margin-bottom: 20px;">Save Bio</button>
+        </form>
     </div>
+
+    <div class="edit-bio-form">
+        <form method="post" action="{% url 'edit_lc_account' %}" style="display: flex; flex-direction: column; align-items: center; self-align: center; text-align: center;">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <label for="leetcodeUsername" class="profile-label" style="margin-bottom: 10px;">LeetCode Username:</label>
+            <input type="text" name="leetcodeUsername" id="leetcodeUsername" style="margin-bottom: 10px; width: 80%; padding: 8px; border-radius: 5px;">
+            <button type="submit" class="save-button" style="background-color: #3498db; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.2s; margin-bottom: 20px;">Connect LC</button>
+        </form>
+    </div>
+
+    <div class="edit-bio-form">
+        <form method="post" action="{% url 'edit_cf_account' %}" style="display: flex; flex-direction: column; align-items: center; self-align: center; text-align: center;">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <label for="codeforcesUsername" class="profile-label" style="margin-bottom: 10px;">CodeForces Stats:</label>
+            <input type="text" name="codeforcesUsername" id="codeforcesUsername" style="margin-bottom: 20px; width: 80%; padding: 8px; border-radius: 5px;">
+            <button type="submit" class="save-button" style="background-color: #3498db; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.2s; margin-bottom: 20px;">Connect CF</button>
+        </form>
+    </div>
+
+    <div id="leetcodeStatsContainer" style="margin-top: 20px;"></div>
+
+    <div class="add-friend-form" style="margin-top: 20px; text-align: center;">
+        <form method="post" action="{% url 'add_friend' %}" id="friendForm" style="display: flex; flex-direction: column; align-items: center;">
+            {% csrf_token %}
+            <label for="friend_username" style="margin-bottom: 10px;">Add Friend:</label>
+            <input type="text" name="friend_username" id="friend_username" style="margin-bottom: 10px; width: 80%; padding: 8px; border-radius: 5px;">
+            <button type="submit" class="send-request-button" id="sendFriendRequestBtn" style="background-color: #2ecc71; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.2s;">Send Friend Request</button>
+        </form>
+        <a href="/friend-list"><button class="send-request-button" style="background-color: #3498db; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.2s; margin-top: 20px;">View Friends</button></a>
+    </div>
+</div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{% static 'js/leetcode_connect.js' %}"></script>

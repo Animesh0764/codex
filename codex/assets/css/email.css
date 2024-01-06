@@ -1,0 +1,35 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+/* Styles for the Failed page */
+body.failed {
+    background-color: #f1a1a1;
+}
+
+h1.failed {
+    color: #ee4741; /* Bootstrap's danger color */
+}
+
+/* Styles for the Success page */
+body.success {
+    background-color: #c8f1b7; /* Bootstrap's success color */
+}
+
+h1.success {
+    color: #46ab46; /* Bootstrap's success color */
+}

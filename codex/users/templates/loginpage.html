@@ -7,7 +7,7 @@
             <form class="user-form" method="POST">
                 {% csrf_token %}
                 {{ form }}
-                <span class="forgot-password"><a href="#">Forgot password?</a></span>
+                {% comment %} <span class="forgot-password"><a href="#">Forgot password?</a></span> {% endcomment %}
                 {% if request.GET.next  %}
                     <input type="hidden" name="next" value="{{ request.GET.next }}">
                 {% endif %}

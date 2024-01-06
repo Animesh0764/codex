@@ -14,6 +14,8 @@ urlpatterns = [
     path('add_friend/', views.add_friend, name='add_friend'),
     path('friend-list/', views.friend_list, name='friend_list'),
     path('friend-stats/<str:friend_username>/', views.friend_stats, name='friend_stats'),
+    path('edit-cf-account/', views.edit_cf_account, name='edit_cf_account'),
+    path('edit-lc-account/', views.edit_lc_account, name='edit_lc_account'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
