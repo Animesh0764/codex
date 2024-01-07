@@ -1,0 +1,33 @@
+.stats-container {
+    display: flex !important;
+    margin-right: 20px;
+    text-align: center;
+    flex-direction: column !important;
+}
+
+#leetcode-stats,
+#codeforces-stats {
+    flex: 1;
+    margin-right: 20px;
+}
+
+#leetcode-stats h2,
+#codeforces-stats h2 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+#leetcodeStatsContainer {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 720px) {
+    .stats-container {
+        margin-right: 20px;
+        text-align: center;
+        flex-direction: column;
+    }
+}

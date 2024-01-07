@@ -41,16 +41,16 @@
         </form>
     </div>
 
-    <div id="leetcodeStatsContainer" style="margin-top: 20px;"></div>
+    <a href="/personal-stats"><button class="save-button" style="background-color: #3498db; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.2s; margin-bottom: 20px; font-size: 1.2rem; margin-top: 2rem;">My Stats</button></a>
 
     <div class="add-friend-form" style="margin-top: 20px; text-align: center;">
         <form method="post" action="{% url 'add_friend' %}" id="friendForm" style="display: flex; flex-direction: column; align-items: center;">
             {% csrf_token %}
             <label for="friend_username" style="margin-bottom: 10px;">Add Friend:</label>
             <input type="text" name="friend_username" id="friend_username" style="margin-bottom: 10px; width: 80%; padding: 8px; border-radius: 5px;">
-            <button type="submit" class="send-request-button" id="sendFriendRequestBtn" style="background-color: #2ecc71; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.2s;">Send Friend Request</button>
+            <button type="submit" class="send-request-button" id="sendFriendRequestBtn" style="background-color: #2ecc71; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.2s; font-size: 1rem">Send Friend Request</button>
         </form>
-        <a href="/friend-list"><button class="send-request-button" style="background-color: #3498db; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.2s; margin-top: 20px;">View Friends</button></a>
+        <a href="/friend-list"><button class="send-request-button" style="background-color: #3498db; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.2s; margin-top: 20px; font-size: 1rem">View Friends</button></a>
     </div>
 </div>
 

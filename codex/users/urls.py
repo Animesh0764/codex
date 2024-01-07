@@ -16,6 +16,7 @@ urlpatterns = [
     path('friend-stats/<str:friend_username>/', views.friend_stats, name='friend_stats'),
     path('edit-cf-account/', views.edit_cf_account, name='edit_cf_account'),
     path('edit-lc-account/', views.edit_lc_account, name='edit_lc_account'),
+    path('personal-stats/', views.personal_stats, name='personal_stats'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/individual-stats.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="stats-container" style="margin-right: 20px; text-align: center;">
+        <div id="leetcode-stats" style="flex: 1; margin-right: 20px; margin-left: 1rem;">
+            <!-- Display LeetCode stats here -->
+            <h2 style="font-size: 2rem; color: #fff; margin-bottom: 10px;">LeetCode Stats</h2>
+            <div class="ind-stats" style="text-align: left; margin-bottom: 1rem; -webkit-box-shadow: 0px 0px 30px 4px rgba(255,255,255,0.7); -moz-box-shadow: 0px 0px 30px 4px rgba(255,255,255,0.7); box-shadow: 0px 0px 30px 4px rgba(255,255,255,0.7);">
+                <div id="username"></div>
+            
+                <div class="stat-box" id="totalBox">
+                    <div id="totalProblems"></div>
+                </div>
+            
+                <div class="stat-box" id="easyBox">
+                    <div id="easy"></div>
+                    <div id="easyPercentage"></div>
+                </div>
+            
+                <div class="stat-box" id="mediumBox">
+                    <div id="medium"></div>
+                    <div id="mediumPercentage"></div>
+                </div>
+            
+                <div class="stat-box" id="hardBox">
+                    <div id="hard"></div>
+                    <div id="hardPercentage"></div>
+                </div>
+            
+                <div class="stat-box" id="totalBox2">
+                    <div id="solved"></div>
+                    <div id="solvedPercentage"></div>
+                </div>
+            </div>
+            <div id="leetcodeStatsContainer" style="padding: 10px; margin-top: 2rem;"></div>
+        </div>
+        <div id="codeforces-stats" style="flex: 1; margin-left: 1rem;">
+            <!-- Display Codeforces stats here -->
+            <h2 style="font-size: 2rem; color: #fff; margin-bottom: 10px;">Codeforces Stats</h2>
+            <div class="ind-stats" style=" -webkit-box-shadow: 0px 0px 30px 4px rgba(255,255,255,0.7); -moz-box-shadow: 0px 0px 30px 4px rgba(255,255,255,0.7); box-shadow: 0px 0px 30px 4px rgba(255,255,255,0.7);">
+                <div id="CFusername"></div>
+            
+                <div class="stat-box" id="totalBoxCF">
+                    <div id="totalProblemsCF"></div>
+                </div>
+            
+                <div class="stat-box" id="attemptBox">
+                    <div id="totalAttempts"></div>
+                    <div id="successAttempts"></div>
+                </div>
+            
+                <div class="stat-box" id="quesBox">
+                    <div id="practice"></div>
+                    <div id="contest"></div>
+                </div>
+            
+                <div class="stat-box" id="ratingBox">
+                    <div id="currating"></div>
+                    <div id="maxrating"></div>
+                </div>
+            
+                <div class="stat-box" id="rankBox">
+                    <div id="maxrank"></div>
+                    <div id="minrank"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/leetcode_connect.js' %}"></script>
+    <script src="{% static 'js/individual-friends-stats.js' %}"></script>
+    <script>
+        // Call the fetchLeetCodeStats function when the page loads to display the stats
+        $(document).ready(function () {
+            const leetcodeUsername = "{{ user_profile.leetcode_username }}";
+            if (leetcodeUsername) {
+                fetchLeetCodeStats(leetcodeUsername);
+                fetchIndividualLeetCodeStats(leetcodeUsername);
+            }
+        });
+
+        // Call the fetchCodeforcesStats function when the page loads to display the Codeforces stats
+        $(document).ready(function () {
+            const codeforcesUsername = "{{ user_profile.codeforces_username }}";
+            if (codeforcesUsername) {
+                fetchCodeForcesStatus(codeforcesUsername);
+                fetchCodeForcesRating(codeforcesUsername);
+            }
+        });
+    </script>
+{% endblock %}

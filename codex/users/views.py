@@ -228,3 +228,19 @@ def edit_lc_account(request):
         user_profile.save()
     
     return redirect('profile_page')
+
+def reset_password(request):
+    if request.method == 'POST':
+        form = PasswordResetForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = PasswordResetForm()
+    return render(request, 'reset_password.html', {'form': form})
+
+@login_required
+def personal_stats(request):
+    user = request.user
+    user_profile, created = UserProfile.objects.get_or_create(cur_user=user)
+    return render(request, 'personal_stats.html', {'user_profile': user_profile})

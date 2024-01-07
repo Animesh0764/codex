@@ -1,9 +1,12 @@
 /* styles.css */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@font-face {
+    font-family: 'switzer';
+    src: url('../fonts/Switzer-Variable.ttf');
+}
 
 *{
-    font-family: 'Poppins';
+    font-family: 'switzer';
 }
 
 body {
