@@ -29,7 +29,7 @@ SECRET_KEY = "django-insecure-0f@#8u%d4z6s86j8)-!2!b%ag2yui^qacjk2b_fyw!nk!v+)*x
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*", "172.31.45.92"]
+ALLOWED_HOSTS = ["*", "172.31.45.92", '.vercel.app']
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users',
+    'example',
 ]
 
 MIDDLEWARE = [
@@ -73,6 +74,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'codex.wsgi.application'
+# vercel_app/wsgi.py
+app = get_wsgi_application()
 
 
 # Database
