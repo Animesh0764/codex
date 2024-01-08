@@ -65,7 +65,7 @@ nav ul li {
 
 .profile-container {
     max-width: 37.5rem; /* 600px */
-    margin: 1.875rem auto; /* 30px */
+    margin: 2rem 1rem; /* 30px */
     padding: 1.25rem; /* 20px */
     background-color: #fff;
     border-radius: 0.625rem; /* 10px */
@@ -382,34 +382,69 @@ nav ul li {
         background-color: black;
         color: white;
     }
+
     .wrapper input[type="text"],
-.wrapper input[type="password"] {
-    width: 70%;
-    padding: 10px;
-    font-size: 20px;
-    border: none;
-    border-radius: 10px;
-    background-color: black;
-    color: white;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    .wrapper input[type="password"] {
+        width: 70%;
+        padding: 10px;
+        font-size: 20px;
+        border: none;
+        border-radius: 10px;
+        background-color: black;
+        color: white;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .wrapper input[type="submit"] {
+        width: 72.3%;
+        height: 40px;
+        background: green;
+        border: none;
+        transition-duration: 0s;
+        border-radius: 10px;
+        font-size: 20px;
+        font-weight: 500;
+        cursor: pointer;
+        margin-top: 3rem;
+        color: white;
+        padding-top: 0.6rem;
+        padding-bottom: 2.6rem;
+    }
 }
 
-.wrapper input[type="submit"] {
-    width: 72.3%;
-    height: 40px;
-    background: green;
-    border: none;
-    transition-duration: 0s;
-    border-radius: 10px;
-    font-size: 20px;
-    font-weight: 500;
-    cursor: pointer;
-    margin-top: 3rem;
-    color: white;
-    padding-top: 0.6rem;
-    padding-bottom: 2.6rem;
-}
+@media (max-width: 350px) {
+    .wrapper2 {
+        width: 70%;
+        height: 75vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #181c24;
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        box-shadow: 1px 1px 2px 2px rgba(255, 255, 255, 0.093);
+        margin-left: 1.2rem;
+        margin-top: 4rem;
+        padding: 2rem;
+        margin-bottom: 1rem;
+    }
+    .wrapper {
+        width: 70%;
+        height: 70vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #181c24;
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        box-shadow: 1px 1px 2px 2px rgba(255, 255, 255, 0.093);
+        margin-left: 1rem;
+        margin-top: 4rem;
+        padding-left: 3rem;
+    }
 }
 
 .wrapper2 h1{

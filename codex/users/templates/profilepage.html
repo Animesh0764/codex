@@ -16,7 +16,7 @@
             <label for="bio" class="profile-label" style="margin-bottom: 10px;">Change bio here:</label>
             <textarea name="bio" id="bio" class="profile-bio" placeholder="Type and save to change your bio" style="margin-bottom: 10px; width: 80%; padding: 8px; border-radius: 5px;">{{ user.userprofile.bio }}</textarea>
 
-            <button type="submit" class="save-button" style="background-color: #3498db; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.2s; margin-bottom: 20px;">Save Bio</button>
+            <button type="submit" class="save-button" style="background-color: #3498db; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.2s; margin-bottom: 20px; margin-left: 0px">Save Bio</button>
         </form>
     </div>
 
@@ -26,7 +26,7 @@
             {{ form.as_p }}
             <label for="leetcodeUsername" class="profile-label" style="margin-bottom: 10px;">LeetCode Username:</label>
             <input type="text" name="leetcodeUsername" id="leetcodeUsername" style="margin-bottom: 10px; width: 80%; padding: 8px; border-radius: 5px;">
-            <button type="submit" class="save-button" style="background-color: #3498db; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.2s; margin-bottom: 20px;">Connect LC</button>
+            <button type="submit" class="save-button" style="background-color: #3498db; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.2s; margin-bottom: 20px; margin-left: 0px">Connect LC</button>
         </form>
     </div>
 
@@ -37,11 +37,11 @@
 
             <label for="codeforcesUsername" class="profile-label" style="margin-bottom: 10px;">CodeForces Stats:</label>
             <input type="text" name="codeforcesUsername" id="codeforcesUsername" style="margin-bottom: 20px; width: 80%; padding: 8px; border-radius: 5px;">
-            <button type="submit" class="save-button" style="background-color: #3498db; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.2s; margin-bottom: 20px;">Connect CF</button>
+            <button type="submit" class="save-button" style="background-color: #3498db; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.2s; margin-bottom: 20px; margin-left: 0px">Connect CF</button>
         </form>
     </div>
 
-    <a href="/personal-stats"><button class="save-button" style="background-color: #3498db; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.2s; margin-bottom: 20px; font-size: 1.2rem; margin-top: 2rem;">My Stats</button></a>
+    <a href="/personal-stats"><button class="save-button" style="background-color: #3498db; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.2s; margin-bottom: 20px; font-size: 1.2rem; margin-top: 2rem; margin-left: 0px">My Stats</button></a>
 
     <div class="add-friend-form" style="margin-top: 20px; text-align: center;">
         <form method="post" action="{% url 'add_friend' %}" id="friendForm" style="display: flex; flex-direction: column; align-items: center;">

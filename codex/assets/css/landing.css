@@ -514,3 +514,16 @@ footer {
         text-transform: lowercase;
     }
 }
+
+@media (max-width: 350px) {
+    .buttons{
+        text-align: center;
+        justify-content: center;
+        align-self: center;
+        margin-bottom: 4rem;
+    }
+    .centered-image {
+        max-width: 70%; 
+        height: auto;
+    }
+}
