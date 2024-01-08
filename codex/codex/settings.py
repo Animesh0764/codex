@@ -74,8 +74,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'codex.wsgi.application'
-# vercel_app/wsgi.py
-app = get_wsgi_application()
 
 
 # Database
