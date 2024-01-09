@@ -1,6 +1,6 @@
 <h1 align="center" id="title">Codex - Competitive Programming Analyser</h1>
 
-<p align="center"><img src="/codex/assets/Codex-CP-Analyzer.png" alt="project-image"></p>
+<p align="center"><img src="/assets/Codex-CP-Analyzer.png" alt="project-image"></p>
 
 <p id="description">Introducing a cutting-edge Competitive Programming Analyzer! This tool built on Django HTML and CSS empowers you to seamlessly track your LeetCode progress. Elevate your experience by adding friends and engaging in friendly competitions as you gain insights into their stats. Stay ahead in the coding game with this sleek user-friendly platform! 🚀🌐💻</p>
 
